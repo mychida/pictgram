@@ -8,7 +8,7 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import lombok.Data;
 
-@MappedSuperclass //?このクラスを継承したクラスでtableの記載があるからこのクラスではその記載はしませんの印
+@MappedSuperclass //このクラスを継承したクラスでtableの記載があるからこのクラスではその記載はしませんの印
 @Data
 public class AbstractEntity {
 	@Column(name = "created_at")
@@ -17,14 +17,14 @@ public class AbstractEntity {
 	@Column(name = "updated_at")
 	private Date updatedAt;
 
-	@PrePersist //?データベースを保存する前に必ず実行するもの
+	@PrePersist //データベースを保存する前に必ず実行するもの
 	public void onPrePersist() {
 		Date date = new Date();
 		setCreatedAt(date);
 		setUpdatedAt(date);
 	}
 
-	@PreUpdate //?データベースを更新する前に必ず実行するもの
+	@PreUpdate //データベースを更新する前に必ず実行するもの
 	public void onPreUpdate() {
 		setUpdatedAt(new Date());
 	}

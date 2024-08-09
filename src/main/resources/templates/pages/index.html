@@ -1,5 +1,7 @@
+<!--ログイン前のトップ画面-->
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/layout}">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{layouts/layout}">
     <head>
         <title>Pictgram</title>
     </head>
@@ -20,7 +22,9 @@
                     </div>
                 </div>
                 <div class="d-block d-lg-none d-xl-none d-xxl-none">
+					<!--新規登録-->
                     <a class="btn w-100 btn-outline-light mb-3" href="/users/new">Sign up</a>
+                    <!--ログイン-->
                     <a class="btn w-100 btn-outline-light" href="/login">Log in</a>
                 </div>
             </div>

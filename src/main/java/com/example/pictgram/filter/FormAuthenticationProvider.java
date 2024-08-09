@@ -1,3 +1,6 @@
+/**フォームから送信した名前・パスワードをチェックしユーザーを取得。
+ * 名前とパスワードはログ出力する
+ */
 package com.example.pictgram.filter;
 
 import org.slf4j.Logger;

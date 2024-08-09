@@ -9,6 +9,7 @@ public class SessionsController {
 	
 	@GetMapping("/login")
 	public String index() {
+		//ログイン画面を表示
 		return "sessions/new";
 	}
 	

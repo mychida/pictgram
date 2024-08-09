@@ -1,3 +1,6 @@
+/**Spring Security ではユーザー情報を取得するインターフェースとして UserDetailsService が定義されている。
+ * UserDetailsService の処理を、このクラスで実装。
+ */
 package com.example.pictgram.service;
 
 import org.slf4j.Logger;
@@ -22,6 +25,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
 		log.debug("username={}", username);
 		
+		//名前なしor空白の場合の処理
 		if(username == null || "".equals(username)) {
 			throw new UsernameNotFoundException("Username is empty");
 		}

@@ -1,3 +1,4 @@
+<!--ユーザー登録画面-->
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{layouts/layout}">
@@ -14,7 +15,9 @@
 				<main class="col-md-4 mx-auto">
 					<h1 class="text-center text-white">Sign in</h1>
 					<form method="post" th:action="@{/user}" th:object="${form}">
-						<div layout:replace="~{layouts/common::messages}"></div>
+						<!--th:object="${form}→おまじない
+						　UsersControllerの`PostMapping("/user")と{"/user"}が紐づく-->
+						<div layout:replace="~{layouts/common::messages}"></div><!--←？？-->
 						<div class="mb-3">
 							<label class="form-label text-white" form="user_name">Name</label>
 							<input type="text" class="form-control" th:field="*{name}" />

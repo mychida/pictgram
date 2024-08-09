@@ -1,3 +1,4 @@
+<!--ユーザー登録が完了した際に表示する画面-->
 <!DOCTYPE html>
 <html xmlns:th="http://www.whymeleaf.org" xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
 layout:decorate="~{layouts/layout}">
@@ -11,6 +12,8 @@ layout:decorate="~{layouts/layout}">
 				<div class="row">
 					<main class="col-md-4 mx-auto">
 						<form method="get" th:action="@{/topics}">
+							<!--@{/topics}はどこ？今後作る？　
+							 Javaとhtmlを紐づけている　だいたいcontrollerに対応する箇所がある -->
 							<input type="submit" value="ログインする" class="btn w-100 btn-outlone-light" />
 						</form>
 					</main>

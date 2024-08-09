@@ -1,3 +1,5 @@
+/**抽象クラスを継承したEntityクラス
+ */
 package com.example.pictgram.entity;
 
 import java.util.Collection;
@@ -25,6 +27,7 @@ public class User extends AbstractEntity implements UserDetails, UserInf {
 	private static final long serialVersionUID = 1L;
 
 	public enum Authority {
+		//普通のユーザーと管理者権限
 		ROLE_USER, ROLE_ADMIN
 	};
 
@@ -41,7 +44,7 @@ public class User extends AbstractEntity implements UserDetails, UserInf {
 
 	@Id
 	@SequenceGenerator(name = "users_id_seq")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)//主キーを生成
 	private Long userId;
 
 	@Column(nullable = false, unique = true)
@@ -55,6 +58,7 @@ public class User extends AbstractEntity implements UserDetails, UserInf {
 
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
+	//↑アノテーションの意味は？
 	private Authority authority;
 
 	@Override

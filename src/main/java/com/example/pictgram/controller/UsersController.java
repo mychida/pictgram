@@ -32,7 +32,7 @@ public class UsersController {
 		return "users/new";
 	}
 	
-	@PostMapping("/user")
+	@PostMapping("/user") //→new.htmlの中のth:action="@{/user}と対応
 	//usersテーブルにユーザー情報を保存
 	public String create(@Validated @ModelAttribute("form") UserForm form, BindingResult result,
 			Model model, RedirectAttributes redirAttrs) {
@@ -41,22 +41,26 @@ public class UsersController {
 		String password = form.getPassword();
 		
 		if(repository.findByUsername(email) != null) {
+			//同じメールアドレス＝ユーザー名がないか探す
 			FieldError fieldError = new FieldError(result.getObjectName(),
 				"email", "そのEメールはすでに使用されています。");
 				result.addError(fieldError);
 		}
 		if (result.hasErrors()) {
-			//バリデーションでのユーザー登録失敗時
+			//バリデーションでひっかかり、ユーザー登録失敗時。
 			model.addAttribute("hasMessage", true);
 			model.addAttribute("class", "alert-danger");
 			model.addAttribute("message", "ユーザー登録に失敗しました");
 			return "users/new";
+			
+			//ユーザー登録に失敗した際は、以下のDBへ保存される処理は行われない？
 		}
 		
+		//入力された情報をDBへ保存
 		User entity = new User(email, name, passwordEncoder.encode(password), Authority.ROLE_USER);
 		repository.saveAndFlush(entity);
 		
-		//ユーザー登録完了メッセージを表示
+		//ユーザー登録完了メッセージを表示。
 		model.addAttribute("hasMessage", true);
 		model.addAttribute("class", "alert-info");
 		model.addAttribute("message", "ユーザー登録が完了しました");

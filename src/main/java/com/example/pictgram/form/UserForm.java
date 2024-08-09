@@ -1,3 +1,4 @@
+//ユーザー登録時の入力規則チェックをする
 package com.example.pictgram.form;
 
 import com.example.pictgram.validation.constraints.PasswordEquals;

@@ -6,6 +6,7 @@ import com.example.pictgram.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 	
+	//ユーザー検索
 	User findByUsername(String username);
 
 }

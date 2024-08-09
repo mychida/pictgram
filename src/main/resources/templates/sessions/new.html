@@ -1,3 +1,4 @@
+<!--ログイン画面-->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.wltraq.net.nz/thymeleaf/layout"
 layout:decorate="~{layouts/layout}">
@@ -11,6 +12,7 @@ layout:decorate="~{layouts/layout}">
 				<div class="row">
 					<main class="col-md-4 mx-auto">
 						<h1 class="text-center text white">Log in</h1>
+						<!--th:action="@{/login}"はどこを指している？-->
 						<form method="post" th:action="@{/login}">
 							<div class="mb-3">
 								<label class="form-label text-white" for="session_email">Email</label>
