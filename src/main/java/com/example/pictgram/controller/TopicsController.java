@@ -62,7 +62,8 @@ public class TopicsController {
 	public String index(Principal principal, Model model) throws IOException {
 		Authentication authentication = (Authentication) principal;
 		UserInf user = (UserInf) authentication.getPrincipal();
-
+		
+		//投稿順に取り出してmodel("list")に保存する
 		List<Topic> topics = repository.findAllByOrderByUpdatedAtDesc();
 		List<TopicForm> list = new ArrayList<>();
 		for (Topic entity : topics) {
@@ -74,6 +75,7 @@ public class TopicsController {
 		return "topics/index";
 	}
 
+	//バリデーション？どのタイミングでこのメソッドが呼ばれる？
 	public TopicForm getTopic(UserInf user, Topic entity) throws FileNotFoundException, IOException {
 		modelMapper.getConfiguration().setAmbiguityIgnored(true);
 		modelMapper.typeMap(Topic.class, TopicForm.class).addMappings(mapper -> mapper.skip(TopicForm::setUser));
@@ -109,6 +111,7 @@ public class TopicsController {
 		return form;
 	}
 
+	//画像のバリデーション？どのタイミングでこのメソッドが呼ばれる？
 	private String getMimeType(String path) {
 		String extension = FilenameUtils.getExtension(path);
 		String mimeType = "image/";
@@ -140,7 +143,7 @@ public class TopicsController {
 
 	@PostMapping("/topic")
 	/**
-	 * 投稿した話題を登録
+	 * 作成した話題を登録
 	 * @param principal
 	 * @param form
 	 * @param result
@@ -149,9 +152,14 @@ public class TopicsController {
 	 * @param redirAttrs
 	 * @return
 	 * @throws IOException
+	 * 
+	 * @ModelAttributeアノテーションを付けると、自動でModelにインスタンスが登録される
+	 * 
 	 */
 	public String create(Principal principal, @Validated @ModelAttribute("form") TopicForm form,
 			/**アップロードする画像は、MultipartFileで受け取る*/
+			//Bindingresult→バリデーションエラーが発生しているかどうかか確認できる。
+			//hasErrors() メソッドがtrueの場合、エラーが発生している。
 			BindingResult result, Model model, @RequestParam MultipartFile image,
 			RedirectAttributes redirAttrs) throws IOException {
 		if (result.hasErrors()) {
@@ -161,11 +169,14 @@ public class TopicsController {
 			return "topics/new";
 		}
 
+		
+		//画像保存先の設定？
 		boolean isImageLocal = false;
 		if (imageLocal != null) {
 			isImageLocal = new Boolean(imageLocal);
 		}
 
+		//投稿のための処理　何をしている？
 		Topic entity = new Topic();
 		Authentication authentication = (Authentication) principal;
 		UserInf user = (UserInf) authentication.getPrincipal();

@@ -7,9 +7,13 @@
 	<body>
 		<div class="topics-index-wrapper" layout:fragment="contents">
 			<div class="container">
+				<!--th:each="変数 : ${コレクション}"で記述できる。${コレクション}の値を1つずつ取り出し
+				変数に代入し、以降の処理の中で変数.フィールドの形で値へアクセスできる。拡張for文みたいな。-->
 				<div class="row" th:each="topic : ${list}">
 					<div class="col-md-6 mx-auto">
 						<main>
+							<!--text="${}"({}にはキーを指定。値ではない)で、
+								Modth:elクラスに登録された値を取得できる-->
 							<h2 class="author" th:text="${topic.user.name}"></h2>
 							<!--th:if="条件"でtrueとなった場合、このタグおよび内部にあるタグを表示する。-->
 							<img src="" th:if="${@environment.getProperty('image.local')}"

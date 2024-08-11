@@ -1,3 +1,6 @@
+/*「Entity」とは、データベースのテーブル構造を表したオブジェクト。
+ * データベースの1行を1インスタンスと対応させるためのクラス。
+ */
 package com.example.pictgram.entity;
 
 import java.io.Serializable;

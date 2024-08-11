@@ -1,4 +1,4 @@
-/**話題と一緒に投稿する画像が空ではないことをチェックするクラス
+/**投稿する画像が空ではないことをチェックするクラス
  */
 package com.example.pictgram.validation.constraints;
 
