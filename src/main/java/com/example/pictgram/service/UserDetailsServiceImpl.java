@@ -1,4 +1,5 @@
-/**Spring Security ではユーザー情報を取得するインターフェースとして UserDetailsService が定義されている。
+/**ユーザー情報を取得するクラス
+ * Spring Security ではユーザー情報を取得するインターフェースとして UserDetailsService が定義されている。
  * UserDetailsService の処理を、このクラスで実装。
  */
 package com.example.pictgram.service;

@@ -1,3 +1,4 @@
+//セキュリティ設定クラス
 package com.example.pictgram;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,8 +54,8 @@ public class SecurityConfig {
 				.permitAll()
 				.anyRequest().authenticated()) //antMatchersで指定したパス以外認証する
 				.formLogin(login -> login
-						.loginProcessingUrl("/login") //ログイン情報の送信先
-						.loginPage("/login") //ログイン画面
+						.loginProcessingUrl("/login") //ログイン処理をするパス
+						.loginPage("/login") //ログインページのリンク先
 						.defaultSuccessUrl("/topics") //ログイン成功時の遷移先
 						.failureUrl("/login-failure") //ログイン失敗時の遷移先
 						.permitAll()) //未ログインでもアクセス可能
