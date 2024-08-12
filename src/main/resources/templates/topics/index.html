@@ -12,14 +12,16 @@
 				<div class="row" th:each="topic : ${list}">
 					<div class="col-md-6 mx-auto">
 						<main>
+							<!--<pre th:utext="${topic}"></pre> ←オンサポ時デバッグに使った
+							　${topic}に値が入っているかどうか確認-->
 							<!--text="${}"({}にはキーを指定。値ではない)で、
 								Modth:elクラスに登録された値を取得できる-->
 							<h2 class="author" th:text="${topic.user.name}"></h2>
 							<!--th:if="条件"でtrueとなった場合、このタグおよび内部にあるタグを表示する。-->
-							<img src="" th:if="${@environment.getProperty('image.local')}"
+							<img th:if="${@environment.getProperty('image.local')}"
 								th:src="${topic.imageData}" class="image" />
-							<!--th:unless="条件"でfalseとなった場合、このタグおよび内部にあるタグを表示する-->
-							<img src="" th:unless="${@environment.getProperty('image.local')}"
+							<!--th:unless="条件"でfalseとなった場合、このタグおよび内部にあるタグを表示するaa-->
+							<img th:unless="${@environment.getProperty('image.local')}"
 								th:src="${topic.path}" class="image" />
 							<pre class="description" th:text="${topic.description}"></pre>
 						</main>

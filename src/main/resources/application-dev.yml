@@ -13,4 +13,4 @@ spring:
 debug: true
 
 image:
-  local:true
+  local: true

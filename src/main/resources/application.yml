@@ -10,4 +10,4 @@ servlet:
     max-request-size: 20MB
 
 image:
-  local:true
+  local: true
