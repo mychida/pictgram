@@ -1,8 +1,8 @@
 spring:
- mvc:
-  hiddenmethod:
-   filter:
-    enabled: true
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
     
 servlet:
   multipart:

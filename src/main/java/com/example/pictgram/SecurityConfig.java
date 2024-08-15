@@ -39,6 +39,7 @@ public class SecurityConfig {
 		RequestMatcher publicMatchers = new OrRequestMatcher(
 		//変数publicMatchersに認証から除外するURLを定義する
 				new AntPathRequestMatcher("/"),
+				new AntPathRequestMatcher("/favicon.ico"),
 				new AntPathRequestMatcher("/error"),
 				new AntPathRequestMatcher("/h2-cosole/**"),
 				new AntPathRequestMatcher("/login"),

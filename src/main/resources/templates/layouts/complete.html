@@ -14,7 +14,8 @@ layout:decorate="~{layouts/layout}">
 						<form method="get" th:action="@{/topics}">
 							<!--@{/topics}はどこ？今後作る？　
 							 Javaとhtmlを紐づけている　だいたいcontrollerに対応する箇所がある -->
-							<input type="submit" value="ログインする" class="btn w-100 btn-outlone-light" />
+							<input type="submit" value="ログインする" class="btn w-100 btn-outlone-light"
+								th:value="#{layouts.layout.submit}" />
 						</form>
 					</main>
 				</div>
