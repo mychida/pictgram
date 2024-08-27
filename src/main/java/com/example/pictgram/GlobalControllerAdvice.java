@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 @Component
-public class GrobalControllerAdvice {
+public class GlobalControllerAdvice {
 	
 	@Autowired
 	private MessageSource messageSource;
 	
-	protected static Logger log = LoggerFactory.getLogger(GrobalControllerAdvice.class);
+	protected static Logger log = LoggerFactory.getLogger(GlobalControllerAdvice.class);
 	
 	@ExceptionHandler(Exception.class)
 	public String exceptionHandler(Exception e, Model model, Locale locale) {
