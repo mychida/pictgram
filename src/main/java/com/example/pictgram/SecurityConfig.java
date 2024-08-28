@@ -47,7 +47,9 @@ public class SecurityConfig {
 				new AntPathRequestMatcher("/user"),
 				new AntPathRequestMatcher("/css/**"),
 				new AntPathRequestMatcher("/images/**"),
-				new AntPathRequestMatcher("/scripts/**"));
+				new AntPathRequestMatcher("/scripts/**"),
+				new AntPathRequestMatcher("push7-worker.js"),
+				new AntPathRequestMatcher("/manifest.json"));
 		
 		//@formatter:off
 		http.authorizeHttpRequests(authz -> authz

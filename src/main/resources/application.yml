@@ -16,3 +16,5 @@ spring:
      password: ${psql.password}
 image:
   local: true
+push7:
+  id: ${push7.id}  
