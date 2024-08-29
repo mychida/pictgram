@@ -35,7 +35,7 @@ public class EventsController {
 			for (Topic entity : topics) {
 				EventForm event = new EventForm();
 				event.setTitle(entity.getDescription());
-				String createdAt = new SimpleDateFormat("yyy-MM-dd").format(entity.getCreatedAt());
+				String createdAt = new SimpleDateFormat("yyyy-MM-dd").format(entity.getCreatedAt());
 				event.setStart(createdAt);
 				event.setUrl("/topics#" + entity.getId());
 				form.add(event);
