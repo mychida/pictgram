@@ -10,6 +10,7 @@
 				<!--th:each="変数 : ${コレクション}"で記述できる。${コレクション}の値を1つずつ取り出し
 				変数に代入し、以降の処理の中で変数.フィールドの形で値へアクセスできる。拡張for文みたいな。-->
 				<div class="row" th:each="topic : ${list}">
+					<a th:id="${topic.id}"></a>
 					<div class="col-md-6 mx-auto">
 						<main>
 							<!--<pre th:utext="${topic}"></pre> ←オンサポ時デバッグに使った

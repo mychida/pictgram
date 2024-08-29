@@ -1,4 +1,4 @@
-//? フォームとエンティティーのプロパティーがほぼ同じ？
+//フォームとエンティティーのプロパティーを自動でマッピングさせるためのクラス
 package com.example.pictgram;
 
 import org.modelmapper.ModelMapper;

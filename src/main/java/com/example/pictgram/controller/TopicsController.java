@@ -98,6 +98,8 @@ public class TopicsController {
 		if (imageLocal != null) {
 			isImageLocal = new Boolean(imageLocal);
 		}
+		
+		//modelMapperを利用してエンティティーからフォームへの移し替えをする
 		TopicForm form = modelMapper.map(entity, TopicForm.class);
 
 		if (isImageLocal) {
