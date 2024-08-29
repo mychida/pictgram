@@ -27,7 +27,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="/scripts/method-convert.js" th:src="@{/scripts/method-convert.js}"></script>
 	<script src="https://sdk.push7.jp/v2/p7sdk.js"></script>
-	<!--"1089cbe69b8140c0a92b6f4ca3fc88be"自身に固有のIDということ？-->
 	<script th:inline="javascript">
 		p7.init(/*[[${@environment.getProperty('push7.id')}]]*/, {
 			mode: "native",
