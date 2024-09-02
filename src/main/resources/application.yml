@@ -33,3 +33,5 @@ image:
   local: true
 push7:
   id: ${push7.id}
+googlemap:
+  key: ${googlemap.key}
