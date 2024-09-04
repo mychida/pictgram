@@ -31,6 +31,10 @@ public class TopicForm {
 	@NotEmpty
 	@Size(max = 1000)
 	private String description; //投稿コメント
+	
+	private Double latitude;//経度
+	
+	private Double longitude;//緯度
 
 	private UserForm user; //投稿ユーザーのデータ
 	
