@@ -1,38 +1,58 @@
 <!--ログイン画面-->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.wltraq.net.nz/thymeleaf/layout"
-layout:decorate="~{layouts/layout}">
-	<head>
-		<title>Pictgram</title>
-	</head>
-	<body>
-		<div class="users-new-wrapper" layout:fragment="contents">
-			<div class="container">
-				<div class="row p-form-top d-none d-lg-block d-xl-block d-xxl-block"></div>
-				<div class="row">
-					<main class="col-md-4 mx-auto">
-						<h1 class="text-center text white" th:text="#{sessions.new.title}">Log in</h1>
-						<!--th:action="@{/login}"はどこを指している？-->
-						<form method="post" th:action="@{/login}">
-							<div class="mb-3">
-								<label class="form-label text-white" for="session_email" th:text="#{sessions.new.email}">
-									Email
-								</label>
-								<input class="form-control" type="text" name="username" id="session_email" />
-							</div>
-							<div class="mb-3">
-								<label class="form-label text-white" for="session_password"
-									th:text="#{sessions.new.password}">
-									Password
-								</label>
-								<input class="form-control" type="password" name="password" id="session_password" />
-							</div>
-							<input type="submit" value="ログイン" class="btn w-100 btn-outline-light"
-								th:value="#{sessions.new.submit}" />
-						</form>
-					</main>
+	layout:decorate="~{layouts/layout}">
+
+<head>
+	<title>Pictgram</title>
+</head>
+
+<body>
+	<div class="users-new-wrapper" layout:fragment="contents">
+		<div class="container">
+			<div class="row p-form-top d-none d-lg-block d-xl-block d-xxl-block"></div>
+			<div class="row">
+				<main class="col-md-4 mx-auto">
+					<h1 class="text-center text white" th:text="#{sessions.new.title}">Log in</h1>
+					<!--th:action="@{/login}"はどこを指している？-->
+					<form method="post" th:action="@{/login}">
+						<div class="mb-3">
+							<label class="form-label text-white" for="session_email" th:text="#{sessions.new.email}">
+								Email
+							</label>
+							<input class="form-control" type="text" name="username" id="session_email" />
+						</div>
+						<div class="mb-3">
+							<label class="form-label text-white" for="session_password"
+								th:text="#{sessions.new.password}">
+								Password
+							</label>
+							<input class="form-control" type="password" name="password" id="session_password" />
+						</div>
+						<input type="submit" value="ログイン" class="btn w-100 btn-outline-light"
+							th:value="#{sessions.new.submit}" />
+					</form>
+				</main>
+			</div>
+		</div>
+		<div class="container" style="margin-top: 60px">
+			<div class="row">
+				<div class="col-md-4 mx-auto">
+					<div class="mb-3">
+						<a class="btn w-100 btn-social btn-google text-center" href="/oauth2/authorization/google">
+							<span class="bi bi-google"></span><span th:text="#{sessions.new.login_google}" />
+						</a>
+					</div>
+					<div class="mb-3">
+						<a class="btn w-100 btn-social btn-github text-center" href="/oauth2/authorization/github">
+							<span class="bi bi-github"></span><span th:text="#{sessions.new.login_github}" />
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
-	</body>
+	</div>
+	</div>
+</body>
+
 </html>
