@@ -21,7 +21,7 @@
 						<!--ナビゲーションにカレンダーのアイコンを配置。クリックしてカレンダー画面に遷移-->
 						<li class="nav-item">
 							<a class="nav-link" th:href="@{/calendars}">
-							<img src="/images/icons/calendar.png" th:src="@{/images/icons/calendar.png}">
+								<img src="/images/icons/calendar.png" th:src="@{/images/icons/calendar.png}">
 							</a>
 						</li>
 						<li class="nav-item">
@@ -35,6 +35,11 @@
 							</a>
 						</li>
 						<li class="nav-item">
+							<a class="nav-link" th:href="@{/topics/topic.csv}">
+								<img src="/images/icons/download.png" th:src="@{/images/icons/download.png}">
+							</a>
+						</li>
+						<li class="nav-item">
 							<a th:href="@{/logout}" class="nav-link convert" data-method="post"
 								th:data-_csrf="${_csrf.token}">
 								<img src="/images/icons/logout.png" th:src="@{/images/icons/logout.png}">
@@ -43,7 +48,7 @@
 					</th:block>
 					<th:block sec:authorize="!isAuthenticated()">
 						<!--sec:authorize="!isAuthenticated()"で囲ったブロックは未ログイン状態で表示されるリンク -->
-						
+
 						<li class="nav-item">
 							<a class="nav-link" th:href="@{/users/new}">
 								<img src="/images/icons/register.png" th:src="@{/images/icons/register.png}">
