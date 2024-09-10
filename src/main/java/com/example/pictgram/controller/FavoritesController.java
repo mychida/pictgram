@@ -55,6 +55,8 @@ public class FavoritesController {
 			list.add(form);
 		}
 		model.addAttribute("list", list);
+		
+		model.addAttribute("hasFooter", true);
 
 		/**テンプレートは、topicsと共用のためfavorite専用のhtmlはない */
 		return "topics/index";
